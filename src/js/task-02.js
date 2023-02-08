@@ -14,24 +14,45 @@ const ingredients = [
   "Condiments",
 ];
 
+const elements = [];
+
 const ulEl = document.querySelector("#ingredients");
 console.log(ulEl);
 
-const liItemEl = document.createElement("li");
-liItemEl.classList.add("item");
-liItemEl.textContent = ingredients[0];
+for (let ingredient of ingredients) {
+  const liItemEl = document.createElement("li");
+  liItemEl.classList.add("item");
+  liItemEl.textContent = ingredient;
+  elements.push(liItemEl);
+}
 
-const liItemEl2 = document.createElement("li");
-liItemEl2.classList.add("item");
-liItemEl2.textContent = ingredients[1];
-
-const liItemEl3 = document.createElement("li");
-liItemEl3.classList.add("item");
-liItemEl3.textContent = ingredients[2];
-
-const liItemEl4 = document.createElement("li");
-liItemEl4.classList.add("item");
-liItemEl4.textContent = ingredients[3];
-
-ulEl.append(liItemEl, liItemEl2, liItemEl3, liItemEl4);
+ulEl.append(...elements);
 console.log(ulEl);
+
+// const listEl = document.querySelector(".list");
+
+// const addElementsList = (array, listEl) => {
+//   // const markup = array.reduce(
+//   //   (acc, { first_name, last_name, email, phone }) =>
+//   //     acc +
+//   //     `
+//   //   <li>
+//   //   <p>${first_name} ${last_name}</p>
+//   //   <p>${email}</p>
+//   //   <p>${phone}</p>
+//   //   </li>`,
+//   //   ""
+//   // );
+//   const markup = array.map(
+//     ({ first_name, last_name, email, phone }) =>
+//       `
+//     <li>
+//     <p>${first_name} ${last_name}</p>
+//     <p>${email}</p>
+//     <p>${phone}</p>
+//     </li>`
+//   );
+//   listEl.insertAdjacentHTML("beforeend", markup.join(""));
+// };
+
+// addElementsList(users, listEl);

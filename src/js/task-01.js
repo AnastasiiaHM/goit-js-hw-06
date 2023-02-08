@@ -9,13 +9,18 @@
 
 // Category: Products
 // Elements: 3
-
-const liItemEl = document.querySelectorAll(".item");
+const ulEl = document.querySelector("#categories");
+const liItemEl = ulEl.children;
 console.log(`Numbers of categories ${liItemEl.length}`);
+for (const li of liItemEl) {
+  const titleEL = li.firstElementChild;
+  const chilUlEl = li.lastElementChild;
+  const chilLiEl = chilUlEl.children;
+  console.log(` Category: ${titleEL.textContent}`);
+  console.log(`Elemnts: ${chilLiEl.length}`);
+}
 
-const titleEL = document.querySelectorAll("h2");
-console.log(` Category: ${titleEL[0].textContent}`);
-
-console.log(ulEl);
+// const ulEl = document.querySelector("ul");
+// console.log(ulEl);
 // const liEl = ulEl.children;
 // console.log(liEl);

@@ -1,7 +1,7 @@
-// Використовуй масив об'єктів images для створення елементів <img>, вкладених в <li>. Для створення розмітки використовуй шаблонні рядки і метод insertAdjacentHTML().
+// // Використовуй масив об'єктів images для створення елементів <img>, вкладених в <li>. Для створення розмітки використовуй шаблонні рядки і метод insertAdjacentHTML().
 
-// Усі елементи галереї повинні додаватися в DOM за одну операцію додавання.
-// Додай мінімальне оформлення галереї флексбоксами або грідами через CSS класи.
+// // Усі елементи галереї повинні додаватися в DOM за одну операцію додавання.
+// // Додай мінімальне оформлення галереї флексбоксами або грідами через CSS класи.
 
 const images = [
   {
@@ -19,28 +19,13 @@ const images = [
 ];
 const ulEl = document.querySelector(".gallery");
 
-const imageElements = images.map((image) => {
-  const liEl = document.createElement("li");
-  const imgEl = document.createElement("img");
-  imgEl.href = image.url;
-  imgEl.alt = image.alt;
-  liEl.append(imgEl);
-  // return ` <li class="item">${liEl}</li>`;
-  return liEl;
-});
-console.log(imageElements);
-ulEl.append(...imageElements);
-
-// const list = document.querySelector(".list");
-
-// const newTechnologies = ["React", "TypeScript", "Node.js"];
-// const markup = newTechnologies
-//   .map((technology) => `<li class="list-item new">${technology}</li>`)
-//   .join("");
-
-// list.insertAdjacentHTML("beforeend", markup);
-// list.insertAdjacentHTML("beforebegin", "<h2>Popular technologies</h2>");
-
-// ulEl.insertAdjacentHTML("afterbegin", ...imageElements);
+const markup = images
+  .map(
+    ({ url, alt }) =>
+      `<li class="item"><img src="${url}" alt="${alt}" class="pictures""/></li>`
+  )
+  .join("");
+console.log(markup);
+ulEl.insertAdjacentHTML("beforeend", markup);
 
 console.log(ulEl);
