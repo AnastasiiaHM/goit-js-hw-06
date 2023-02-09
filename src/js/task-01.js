@@ -19,8 +19,3 @@ for (const li of liItemEl) {
   console.log(` Category: ${titleEL.textContent}`);
   console.log(`Elemnts: ${chilLiEl.length}`);
 }
-
-// const ulEl = document.querySelector("ul");
-// console.log(ulEl);
-// const liEl = ulEl.children;
-// console.log(liEl);

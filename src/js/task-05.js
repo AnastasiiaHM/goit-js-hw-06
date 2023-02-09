@@ -7,9 +7,9 @@ const inputEl = document.querySelector("#name-input");
 const spanEl = document.querySelector("#name-output");
 
 const getStringFromInput = (event) => {
-  event.currentTarget.value !== null
+  event.currentTarget.value !== ""
     ? (spanEl.textContent = event.currentTarget.value)
-    : "Anonymous";
+    : (spanEl.textContent = "Anonymous");
 };
 
 inputEl.addEventListener("input", getStringFromInput);

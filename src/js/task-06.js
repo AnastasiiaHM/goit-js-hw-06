@@ -29,6 +29,6 @@ const removeBorderInput = (event) => {
 
   textInput.length !== Number(inputEl.dataset.length)
     ? inputEl.classList.add("invalid")
-    : inputEl.classList.add("valid");
+    : inputEl.classList.remove("invalid") || inputEl.classList.add("valid");
 };
 inputEl.addEventListener("blur", removeBorderInput);

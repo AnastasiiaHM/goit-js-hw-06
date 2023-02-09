@@ -28,6 +28,8 @@ const checkTextInput = (event) => {
 
   if (mail === "" || password === "") {
     alert("Please fill in all the fields!");
+
+    return;
   }
   const formData = { mail, password };
 
