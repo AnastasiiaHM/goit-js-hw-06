@@ -25,23 +25,30 @@ const btnCreateEl = document.querySelector("[data-create]");
 const btnDestroyEl = document.querySelector("[data-destroy]");
 const ctnBoxEl = document.querySelector("#boxes");
 
+console.log();
 function createBoxes(amount) {
-  const newBoxesEl = "";
+  let newBoxesEl = "";
   const firstBoxSize = 30;
   ctnBoxEl.innerHTML = "";
   for (let i = 0; i < amount; i += 1) {
-    newBoxesEl +
-      `<div class="box" style="width: ${(firstBoxSize += 10)}px; height: ${(firstBoxSize += 10)}px; background-color: ${getRandomHexColor()};"></div>`;
+    newBoxesEl += `<div class="box" style="width: ${
+      firstBoxSize + 10 * i
+    }px; height: ${
+      firstBoxSize + 10 * i
+    }px; background-color: ${getRandomHexColor()};"></div>`;
   }
-  ctnBoxEl.insertAdjacentHTML("", newBoxesEl);
-  amount = "";
+  ctnBoxEl.insertAdjacentHTML("beforeend", newBoxesEl);
+  // amount = "";
 }
 
 const destroyBoxes = () => {
   ctnBoxEl.innerHTML = "";
-  inputValueEl.value = null;
+  // amount = "";
 };
-btnCreateEl.addEventListener("click", createBoxes);
+btnCreateEl.addEventListener("click", () => {
+  let amount = inputValueEl.value;
+  createBoxes(amount);
+});
 btnDestroyEl.addEventListener("click", destroyBoxes);
 
 // Не закінчила(((
