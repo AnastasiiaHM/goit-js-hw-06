@@ -50,5 +50,3 @@ btnCreateEl.addEventListener("click", () => {
   createBoxes(amount);
 });
 btnDestroyEl.addEventListener("click", destroyBoxes);
-
-// Не закінчила(((
